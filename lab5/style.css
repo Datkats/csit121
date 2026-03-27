@@ -1,0 +1,94 @@
+body{
+    background-color: rgb(228, 228, 228);
+    color: rgb(28, 28, 70);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+header{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+header h1{
+    flex: 9;
+    margin-left: 5%;
+}
+header nav{
+    flex: 1;
+}
+nav{
+    padding-right: 5%;
+}
+html{
+    scroll-behavior: smooth;
+}
+main{
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+}
+h2, nav p{
+    text-align: center;
+}
+h1,p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+ul,ol{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    color: red;
+}
+p, li{
+    color: brown;
+}
+a:active{
+    color: hotpink;
+}
+#lab1_2_reflection1, #lab1_2_reflection2{
+    text-align: center;
+}
+#lab1_2{
+    padding: 15px;
+}
+#lab3{
+    text-align: center;
+    padding: 15px;
+}
+.lorem1, .lorem3{
+    flex: 1;
+}
+.lorem2{
+    flex: 2;
+}
+.lorem3 img{
+    width: 100%;
+}
+@media(min-width:600px){
+    body{
+        font-size: 18px;
+    }
+    #lab1_2_reflection2, .lab3_reflection, #loren_ipsum{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 5%;
+    }
+    main{
+        width: 95%;
+    }
+}
+@media(min-width:1024px){
+    body{
+        font-size: 22px;
+    }
+    main{
+        width: 95%;
+    }
+}
