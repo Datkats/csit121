@@ -1,0 +1,44 @@
+body{
+    background-image: url(background.png);
+    color: #2e0329;
+}
+h1,nav p{
+    text-align: center;
+}
+nav ul{
+    color: rgb(0, 92, 173);
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    gap: 20px;
+}
+a{
+    text-decoration: none;
+}
+nav ul li a{
+    color: rgb(218, 218, 218);
+}
+footer p{
+    color: rgb(218, 218, 218);
+    text-align: right;
+}
+section{
+    width: 70%;
+    margin: auto;
+}
+section h2,p{
+    text-align: center;
+}
+img{
+    width: 100%;
+    border-radius: 5px;
+}
+a:hover{
+    color: red;
+}
+p{
+    color: rgb(0, 0, 0);
+}
+a:active{
+    color: hotpink;
+}
