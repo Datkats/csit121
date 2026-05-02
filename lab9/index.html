@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reads the XML data using JavaScript</title>
+
+    <!-- CSS -->
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #7ce2af
+        }
+
+        th {
+            background-color: #7c0f65;
+            color: white;
+        }
+
+        .button {
+            position: relative;
+            text-align: center;
+            padding: 20px;
+            border: 4px solid rgb(55, 12, 211);
+            background: rgba(20, 192, 4, 0.5);
+            color: rgb(230, 36, 78);
+            outline: none;
+            border-radius: 30px;
+            font-size: 30px;
+            width: 500px;
+
+        }
+
+        .button:hover {
+            color: black;
+            background: white;
+        }
+
+        /* my additional CSS */
+        body{
+            background-color: rgb(162, 154, 176);
+        }
+        h1 {
+            text-align: center;
+        }
+
+        nav p {
+            text-align: center;
+        }
+
+        nav ul {
+            color: rgb(0, 92, 173);
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        nav ul li a {
+            color: rgb(218, 218, 218);
+        }
+
+        a:hover {
+            color: red;
+        }
+
+        a:active {
+            color: hotpink;
+        }
+
+        .nav_link8 {
+            flex-grow: 1;
+        }
+        section{
+            margin: auto;
+            width: 75%;
+            text-align: center;
+            background-color: #baa9bf;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.40);
+        }
+    </style>
+
+    <!--JavaScript-->
+    <script>
+        function loadXMLDoc() {
+            let xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+
+                // Request finished and response 
+                // is ready and Status is "OK"
+                if (this.readyState == 4 && this.status == 200) {
+                    empDetails(this);
+                }
+            };
+
+            // employee.xml is the external xml file
+            xmlhttp.open("GET", "employee.xml", true);
+            xmlhttp.send();
+        }
+
+        function empDetails(xml) {
+            let i;
+            let xmlDoc = xml.responseXML;
+            let table =
+                `<tr><th>Firstname</th><th>Lastname</th>
+                    <th>Title</th><th>Division</th>
+                    <th>Building</th><th>Room</th>
+                </tr>`;
+            let x = xmlDoc.getElementsByTagName("employee");
+
+            // Start to fetch the data by using TagName 
+            for (i = 0; i < x.length; i++) {
+                table += "<tr><td>" +
+                    x[i].getElementsByTagName("firstname")[0]
+                        .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("lastname")[0]
+                        .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("title")[0]
+                        .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("division")[0]
+                        .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("building")[0]
+                        .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("room")[0]
+                        .childNodes[0].nodeValue + "</td></tr>";
+            }
+
+            // Print the xml data in table form
+            document.getElementById("id").innerHTML = table;
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Davit Tsikelashvili Lab 9</h1>
+        <nav>
+            <p>My previous labs and contact information</p>
+            <ul>
+                <li><a class="nav_link" href="https://datkats.github.io/csit121/lab1/aboutme.html">Lab 1</a></li>
+                <li><a class="nav_link" href="https://datkats.github.io/csit121/lab2/index.html">Lab 2</a></li>
+                <li><a class="nav_link" href="https://datkats.github.io/csit121/lab3/lab3.html">Lab 3</a></li>
+                <li><a class="nav_link" href="https://datkats.github.io/csit121/lab4/index.html">Lab 4</a></li>
+                <li><a class="nav_link" href="https://datkats.github.io/csit121/lab5/index.html">Lab 5</a></li>
+                <li><a class="nav_link" href="https://datkats.github.io/csit121/lab6/index.html">Lab 6</a></li>
+                <li><a class="nav_link" href="https://datkats.github.io/csit121/lab7/tierlist.html">Lab 7</a></li>
+                <li class="nav_link8"><a class="nav_link" href="https://datkats.github.io/csit121/lab8/index.html">Lab 8</a></li>
+
+                <li><a href="bonus.html">bonus website</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>What is Lorem Ipsum?</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
+               standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make 
+               a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, 
+               remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing 
+               Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions 
+               of Lorem Ipsum.
+            </p>
+        </section>
+    </main>
+    <center>
+        <button type="button" class="button" onclick="loadXMLDoc()">
+            Get Employees Details
+        </button>
+    </center>
+
+    <br><br>
+    <table id="id"></table>
+</body>
+
+</html>
