@@ -1,0 +1,172 @@
+body{
+    margin: 0;
+    background-color: rgb(255, 249, 238);
+    font-family: sans-serif;
+}
+h1{
+    text-align: center;
+}
+header {
+    background-color: rgb(253, 215, 111);
+    padding: 20px 0;
+}
+nav ul{
+    color: rgb(0, 92, 173);
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    gap: 20px;
+}
+a{
+    text-decoration: none;
+}
+header{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.3);
+}
+nav ul li a{
+    color: rgb(0, 0, 0);
+}
+a:hover{
+    color: red;
+}
+a:active{
+    color: hotpink;
+}
+.nav_link1{
+    flex-grow: 5;
+}
+article img{
+    width: 97%;
+    border-radius: 10px;
+}
+article{
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    background-color: wheat;
+    border-radius: 15px;
+}
+article h1, article h2, article h3{
+    padding-top: 15px;
+}
+article section{
+    padding-bottom: 10px;
+}
+footer{
+    display: flex;
+    background-color: gray;
+    margin-top: 5px;
+    padding: 15px;
+}
+.footer_left{
+    flex-grow: 1;
+}
+@media(min-width:600px){
+    body{
+        font-size: 18px;
+    }
+    .introduction p{
+        padding: 5px 50px;
+    }
+    .flex_odd, .flex_even, .story_flex{
+        display: flex;
+    }
+    .flex_even{
+        flex-direction: row-reverse;
+    }
+    .flex_img{
+        width: 300px;
+        padding: 10px;
+        border-radius: 15px;
+        max-height: 300px;
+    }
+    .flex_even p{
+        padding-right: 100px;
+        padding-left: 15px;
+    }
+    .flex_odd p{
+        padding-left: 20px;
+        padding-right: 15px;
+    }
+}
+@media(min-width:1024px){
+    body{
+        font-size: 22px;
+    }
+    .flex_even p{
+        padding-right: 350px;
+    }
+    .flex_odd p{
+        padding-left: 350px;
+    }
+}
+
+/* menu part */
+.article_table{
+    background-color: rgb(255, 249, 238); /* same color as body color because it had inherited color from previous styles */
+}
+.menu_table {
+    width: 90%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background-color: wheat;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.menu_table th {
+    padding: 12px;
+}
+
+.menu_table td {
+    padding: 10px;
+    border-bottom: 3px solid black;
+}
+
+.menu_table img {
+    width: 80px;
+    border-radius: 8px;
+}
+@media (max-width: 600px) {
+    .menu_table {
+        font-size: 14px;
+    }
+
+    .menu_table img {
+        width: 60px;
+    }
+}
+
+/* about part */
+.story_flex p{
+    padding: 10px;
+}
+.story_flex div{
+    border: 1px solid rgb(161, 161, 161);
+    border-radius: 7px;
+}
+.hours_table{
+    margin: auto;
+}
+.hours_table td, .hours_table th{
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 5px;
+}
+.staff{
+    background-image: url(background_image.jpg);
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+.staff p{
+    width: 85%;
+    margin: auto;
+}
+@media (min-width: 600px) {
+    .staff p{
+    width: 50%;
+    }
+}
