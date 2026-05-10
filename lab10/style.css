@@ -1,0 +1,43 @@
+body{
+    background-image: url(background.jpg);
+    color: white;
+}
+a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+a:hover{
+    color: red;
+}
+a:active{
+    color: hotpink;
+}
+.home{
+    color: aqua;
+    border-bottom-style: solid;
+    border-color: rgb(29, 31, 155);
+}
+.important{
+    color: aqua;
+    border-bottom-style: solid;
+    border-color: rgb(29, 31, 155);
+}
+.meaning{
+    color: aqua;
+    border-bottom-style: solid;
+    border-color: rgb(29, 31, 155);
+}
+.sources{
+    color: aqua;
+    border-bottom-style: solid;
+    border-color: rgb(29, 31, 155);
+}
+.usage{
+    color: aqua;
+    border-bottom-style: solid;
+    border-color: rgb(29, 31, 155);
+}
+section{
+    margin: auto;
+    text-align: center;
+}
